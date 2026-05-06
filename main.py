@@ -3,6 +3,7 @@ from agents.research_agent import ResearchAgent
 from agents.summarizer_agent import SummarizerAgent
 from agents.synthesis_agent import SynthesisAgent
 from agents.writer_agent import WriterAgent
+from graph.research_graph import build_graph
 from utils.logger import get_logger
 
 def main():
@@ -14,8 +15,12 @@ def main():
     summarizer = SummarizerAgent()
     synthesis = SynthesisAgent()
     writer = WriterAgent()
+    graph = build_graph()
 
-    state = {"query": "What are the latest advancements in quantum computing?"}
+    state = {"query": "Vision transformers in healthcare?",
+             "current_index": 0,
+             "results": []}
+    
     logger.info("Running PlannerAgent...")
     state = planner.run(state)
     logger.info("Running ResearchAgent...")

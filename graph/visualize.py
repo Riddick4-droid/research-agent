@@ -1,9 +1,9 @@
 from graphviz import Digraph
-from utils.logger import get_logger
+#from utils.logger import get_logger
 
 
 def visualize_graph():
-    logger = get_logger('visualize_graph')
+    #logger = get_logger('visualize_graph')
 
     dot = Digraph(comment="Reseaarch Agent Graph")
 

@@ -1,0 +1,17 @@
+// Reseaarch Agent Graph
+digraph {
+	Planner
+	"Human Review"
+	Research
+	Summarize
+	"Memory Update"
+	Synthesis
+	Writer
+	planner -> "Human Review"
+	"Human Review" -> Research
+	Research -> Summarize
+	Summarize -> "Memory Update"
+	"Memory Update" -> Research [label="next subtopic"]
+	"Memory Update" -> Synthesis [label=done]
+	Synthesis -> Writer
+}

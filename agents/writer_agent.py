@@ -40,7 +40,7 @@ Rules:
         self.logger.info(f"Running WriterAgent for query: {query}")
         if not synthesis:
             self.logger.warning("No synthesis available for writing.")
-            state["report"] = "No information available to write a report."
+            state["reports"] = "No information available to write a report."  # Changed from "report" to "reports" to match GraphState
             return state
         self.logger.info("Building prompt for writing...")
         prompt = self.build_prompt(synthesis,query)
@@ -48,5 +48,5 @@ Rules:
         raw_report = self.llm.generate(prompt)
         self.logger.info("Report generated, cleaning output...")
         report = clean_output(raw_report)
-        state["report"] = report
+        state["reports"] = report  # Changed from "report" to "reports" to match GraphState
         return state

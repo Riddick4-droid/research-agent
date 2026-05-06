@@ -19,7 +19,7 @@ class AnthropicLLM(BaseLLM):
                 max_tokens=max_tokens,
                 temperature=temperature
             )
-            generated_text = response.choices[0].message.content.strip()
+            generated_text = response.content[0].text.strip()  # Changed from response.choices[0].message.content to match Anthropic API
             logger.debug(f"Generated response: {generated_text}")
             return generated_text
         except Exception as e:

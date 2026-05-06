@@ -14,14 +14,14 @@ class SynthesisAgent(BaseAgent):
         for item in summaries:
             combined += f"\n\nSubtopic: {item['subtopic']}\nSummary: {item['summary']}\n"
 
-            return f"""
-You are performing a deep research analysis.compiled from multiple sources. Your task is to synthesize the following summaries related to the query: "{query}".
+        return f"""  # Moved return outside the loop to process all summaries
+You are performing a deep research analysis compiled from multiple sources. Your task is to synthesize the following summaries related to the query: "{query}".
 
 Content:
 {combined}
 
 Task:
-Produce an analytical synthesis of the information for the {query}.compile
+Produce an analytical synthesis of the information for the {query}.
 
 Output:
 

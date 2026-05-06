@@ -4,7 +4,7 @@ from typing import Literal
 from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings
 from utils.logger import get_logger
-from langchain.vectorstores import FAISS
+from langchain_core.vectorstores import FAISS
 
 
 logger = get_logger(__name__)
@@ -29,7 +29,7 @@ def create_vector_store(chunks,embedding_model, collection_name:str = "default_c
     except Exception as e:
         logger.error(f"Error creating vector store: {e}")
         raise
-    return None
+    return store  # Changed from return None to return store
 
 
 def retrieve(store,query,k=2):

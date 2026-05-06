@@ -11,7 +11,7 @@ class ResearchAgent(BaseAgent):
         self.logger = get_logger(self.name)
 
     def run(self, state: dict) -> dict:
-        subtopic = state.get("subtopics", []) 
+        subtopic = state.get("current_subtopic", "")  # Changed from "subtopics" to "current_subtopic" for single subtopic processing
         self.logger.info(f"Processing subtopic: {subtopic}")
         if not subtopic:
             self.logger.warning("No subtopics found in state.")
