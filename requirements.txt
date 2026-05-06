@@ -1,0 +1,27 @@
+#requirements
+langchain
+langchain-text-splitters
+langchain-huggingface
+langchain-chroma
+langchain-openai
+langchain-community
+langgraph
+transformers
+accelerate
+sentence-transformers
+faiss-cpu
+arxiv
+openai
+anthropic
+fastapi
+uvicorn
+python-dotenv
+tqdm
+pydantic
+bitsandbytes
+black
+isort
+pytest
+dvc
+
+-e .
